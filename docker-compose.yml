@@ -15,7 +15,7 @@ services:
     ports:
       - 5432:5432
     networks:
-      - iKnowNW
+      - dpnetwork
 
   pgdamin4:
     image: dpage/pgadmin4
@@ -30,7 +30,7 @@ services:
     ports:
       - 8080:80
     networks:
-      - iKnowNW
+      - dpnetwork
 
   php-fpm:
     build:
@@ -47,7 +47,7 @@ services:
       - ./logs:/var/logs
       - ./php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     networks:
-      - iKnowNW
+      - dpnetwork
 
   nginx:
     build:
@@ -63,8 +63,8 @@ services:
     ports:
       - 8081:80
     networks:
-      - iKnowNW
+      - dpnetwork
 
 networks:
-  iKnowNW:
+  dpnetwork:
       driver: bridge
