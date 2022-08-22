@@ -43,7 +43,7 @@ services:
     environment:
       - XDEBUG_CONFIG=client_port=${XDEBUG_PORT}
     volumes:
-      - ../src:/var/www
+      - ./src:/var/www
       - ./logs:/var/logs
       - ./php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     networks:
